@@ -60,3 +60,36 @@
 И так, ранее мы вычислили, что данная функция имеет 6 корней.
 
 Находим каждый корень (перебором), до тех пор пока функция не преодолеет "0", после чего уточним значение с помощью функции nsolve().
+
+    def funcRootResult(minX, maxX, step):
+        tempDifferense = 0
+        if function(minX) - function(minX + step) < 0:
+            for i in arange (minX, maxX, step):
+                if function(i) > tempDifferense: 
+                    nearestX = i
+                    message = f"Функция возрастает!\nx = {i} => f(x) = {function(i)}\nf(x) = 0 при x = {nsolve(f, nearestX)}"
+                    return message
+        if function(minX) - function(minX + step) > 0:
+            for i in arange (minX, maxX, step):
+                if function(i) < tempDifferense: 
+                    nearestX = i
+                    message = f"Функция убывает!\nx = {i} => f(x) = {function(i)}\nf(x) = 0 при x = {nsolve(f, nearestX)}"
+                    return message
+                    
+**Корень 1:**
+
+Ответ: f(x) = 0 при x = -7.65062228513275
+
+    plot(f,(x,-8,-7))
+    print(f)
+    print(funcRootResult(-7.7, -7.6, 0.00001))
+    
+![1 3](https://user-images.githubusercontent.com/110101307/204030551-dc139c52-d33b-4249-aabf-c2144d364e48.png)
+
+Функция убывает!
+x = -7.65062000000187 => f(x) = -0.0876621130482391
+f(x) = 0 при x = -7.65062228513275
+
+**Корень 2:**
+
+Ответ: f(x) = 0 при x = -5.0268659282062
