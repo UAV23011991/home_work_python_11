@@ -32,3 +32,6 @@
     f = -12*sin(cos(x))*x**4 - 18*x**3+5*x**2 + 10*x - 30
     plot(f,(x,-100,100))
     print(f)
+    
+![1 1](https://user-images.githubusercontent.com/110101307/204028416-6c8dc639-3a1e-4c9a-ab5a-f922f8fb5039.png)
+
