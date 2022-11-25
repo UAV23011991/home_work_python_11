@@ -194,6 +194,41 @@ f(x) = 0 при x = 8.03516413341352
     print(ftemp)
     
 ![1 9](https://user-images.githubusercontent.com/110101307/204034803-4eb318a1-d164-48ed-9d7e-37ed1ba85b9f.png)
+
 60*x**4*sin(cos(5*x)) - 90*x**3 + 25*x**2 + 50*x - 30
+
+**Уточняем кол-во вершин:**
+
+    def functionTemp(x):
+        return 60*x**4*sin(cos(5*x)) - 90*x**3 + 25*x**2 + 50*x - 30
+
+    qtyExtr = 0
+    check = true
+    ## Кусок кода ниже фактически считает сколько раз функция поменяла свое направление.
+    for i in arange (-2.5, 2.5, 0.025):
+        tempRes = functionTemp(i + 0.025)
+        tempY = functionTemp(i)
+        if check == true:
+            if tempY - tempRes > 0: 
+                continue
+            else: 
+                check == false
+                ## print(f"{tempY} < {tempRes}")
+                qtyExtr += 1 
+                continue
+        if check == false:
+            if tempY - tempRes < 0: 
+            continue
+            else:
+                check == true
+                ## print(f"{tempY} > {tempRes}")
+                qtyExtr += 1
+                continue
+    
+    print(f"Общее кол-во вершин = {qtyExtr}")
+    
+Итого общее кол-во вершин: 89.
+
+Найдем все вершины на отрезке отрезке х ∈ [—10, 10].
  
  
