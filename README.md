@@ -14,8 +14,7 @@
 
 # 1. Найдем и построим график функции.
 
-from sympy import *
-
+/from sympy import *
 from sympy.plotting import plot
 from sympy import Interval, symbols, solveset
 from sympy.calculus.util import *
