@@ -231,6 +231,30 @@ f(x) = 0 при x = 8.03516413341352
     
 Итого общее кол-во вершин: 89.
 
-Найдем все вершины на отрезке отрезке х ∈ [—10, 10].
+Найдем все вершины на отрезке отрезке х ∈ [—10, 10]:
+
+    def extrFuncValue (func, bMin, bMax):
+        bounds = [(bMin, bMax)]
+        extrFuncValue = differential_evolution(func, bounds)
+        return (extrFuncValue.x,extrFuncValue.fun)
+
+    print("Найдены следующие вершины:")
+    res = extrFuncValue(function, -7, -5) ##границы между x1 и x2 (примерно)
+    print(f"A ({res[0][0]}, {res[1]})")
+    res = extrFuncValue(lambda x:-function(x), -5,-1) ##границы между x2 и x3 (примерно)
+    print(f"B ({res[0][0]}, {res[1] * -1})")
+    res = extrFuncValue(function, -1, 2) ##границы между x3 и x4 (примерно)
+    print(f"С ({res[0][0]}, {res[1]})")
+    res = extrFuncValue(lambda x:-function(x), 2,4) ##границы между x4 и x5 (примерно)
+    print(f"D ({res[0][0]}, {res[1] * -1})")
+    res = extrFuncValue(function, 4, 8) ##границы между x5 и x6 (примерно)
+    print(f"E ({res[0][0]}, {res[1]})")
  
+ Найденные вершины:
+ 
+A (-6.8313694021473355, -13820.534926467413)
+B (-4.167783530421969, 3111.363238735963)
+С (1.7006072713193556, -74.1062930861087)
+D (3.8193108255086323, 872.2557702910614)
+E (7.001031659787006, -25610.50968103302)
  
